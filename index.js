@@ -49,41 +49,51 @@ inquirer
       name: "questions",
       message: "contacts",
     },
+    {
+      type: "input",
+      name: "username",
+      message: "Enter your GitHub username",
+    },
   ])
   .then((answers) => {
-    console.log(answers);
+    const queryUrl = `https://api.github.com/users/${answers.username}`;
 
-    const readMeFun = () => {
-      return `
+    axios.get(queryUrl).then(function (res) {
+      console.log(res);
 
-      https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR>
+      const readMeFun = () => {
+        return `
+  
+        Title:${answers.title}
+        
+        Description:${answers.description}
+        
+        Table of Contents:${answers.links}
+        
+        Installation:${answers.installation}
+        
+        Usage:${answers.usage}
+        
+        License:${answers.license}
+        
+        Contributing:${answers.contributing}
+        
+        Testing:${answers.tests}
+        
+        Contact:${answers.questions}
+  
+        GitHub email:${res.data.email}
 
-      Title:${answers.title}
-      
-      Description:${answers.description}
-      
-      Table of Contents:${answers.links}
-      
-      Installation:${answers.installation}
-      
-      Usage:${answers.usage}
-      
-      License:${answers.license}
-      
-      Contributing:${answers.contributing}
-      
-      Testing:${answers.tests}
-      
-      Contact:${answers.questions}
+        GitHub avatar:${res.data.avatar_url}
+  
+        `;
+      };
 
+      const readMe = readMeFun();
 
-      `;
-    };
-
-    const readMe = readMeFun();
-
-    fs.writeFile("README.md", readMe, (err) => {
-      if (err) throw err;
-      console.log("The file has been saved!");
+      fs.writeFile("README.md", readMe, (err) => {
+        if (err) throw err;
+        console.log("The file has been saved!");
+      });
     });
   });
