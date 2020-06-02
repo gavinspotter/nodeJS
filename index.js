@@ -55,6 +55,9 @@ inquirer
 
     const readMeFun = () => {
       return `
+
+      https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR>
+
       Title:${answers.title}
       
       Description:${answers.description}
@@ -72,6 +75,8 @@ inquirer
       Testing:${answers.tests}
       
       Contact:${answers.questions}
+
+
       `;
     };
 
