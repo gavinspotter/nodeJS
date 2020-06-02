@@ -32,3 +32,5 @@
                 * axios is used to generate the users github email and github avatar
 
                 * fs is used to write the read me file containing all the contents from the prompt
+
+                ![Ra](https://avatars2.githubusercontent.com/u/59751343?v=4.png)
