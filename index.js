@@ -54,38 +54,58 @@ inquirer
       name: "username",
       message: "Enter your GitHub username",
     },
+    {
+      type: "input",
+      name: "badge1",
+      message: "badge label",
+    },
+    {
+      type: "input",
+      name: "badge2",
+      message: "badge message",
+    },
+    {
+      type: "input",
+      name: "badge3",
+      message: "badge color",
+    },
   ])
   .then((answers) => {
     const queryUrl = `https://api.github.com/users/${answers.username}`;
 
     axios.get(queryUrl).then(function (res) {
-      console.log(res);
+      //console.log(res);
 
       const readMeFun = () => {
         return `
-  
-        Title:${answers.title}
         
-        Description:${answers.description}
         
-        Table of Contents:${answers.links}
-        
-        Installation:${answers.installation}
-        
-        Usage:${answers.usage}
-        
-        License:${answers.license}
-        
-        Contributing:${answers.contributing}
-        
-        Testing:${answers.tests}
-        
-        Contact:${answers.questions}
-  
-        GitHub email:${res.data.email}
+![avatar](${res.data.avatar_url})
 
-        GitHub avatar:${res.data.avatar_url}
+![badge](https://img.shields.io/badge/${answers.badge1}-${answers.badge2}-${answers.badge3})
+
+Title:${answers.title}
+        
+Description:${answers.description}
+        
+Table of Contents:${answers.links}
+        
+Installation:${answers.installation}
+        
+Usage:${answers.usage}
+        
+License:${answers.license}
+        
+Contributing:${answers.contributing}
+        
+Testing:${answers.tests}
+        
+Contact:${answers.questions}
   
+GitHub email:${res.data.email}
+
+
+        
         `;
       };
 
