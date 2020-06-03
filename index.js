@@ -74,7 +74,7 @@ inquirer
     const queryUrl = `https://api.github.com/users/${answers.username}`;
 
     axios.get(queryUrl).then(function (res) {
-      //console.log(res);
+      console.log(res);
 
       const readMeFun = () => {
         return `

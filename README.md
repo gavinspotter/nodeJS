@@ -1,9 +1,9 @@
 # Summon the javascript index.js file through node index
 
 
+![ra](https://avatars2.githubusercontent.com/u/59751343?v=4)
 
-
-![this is my image](https://img.shields.io/badge/Gavin-Potter-blue.svg)
+![gavin potter](https://img.shields.io/badge/Gavin-Potter-blue.svg)
 
 
 
@@ -13,7 +13,7 @@
 
   * Description
 
-  * Table of contents
+  * Table of Contents
 
   * Installation
 
