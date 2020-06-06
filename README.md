@@ -5,7 +5,12 @@
   
 
 
-* generate a read me with the following components
+
+# generate a read me with the following components
+
+
+
+
 
   * Title 
 
@@ -29,11 +34,14 @@
 
   * GitHub avatar
 
-* the project requires # inquirer # axios # fs #
+![gif](homework9nodejs.gif)
+
+# the project requires # inquirer # axios # fs #
+
+![gif](homewokr9nodejs1.gif)
 
   * inquirer is used to prompt in the CLI all the components named in the previous section
 
   * axios is used to generate the users github email and github avatar
 
   * fs is used to write the read me file containing all the contents from the prompt
-
